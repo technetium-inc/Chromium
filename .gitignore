@@ -39,3 +39,7 @@ luac.out
 *.x86_64
 *.hex
 
+# VSCode config
+settings.json
+launch.json
+tasks.json
