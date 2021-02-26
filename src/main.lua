@@ -1,4 +1,3 @@
--- Build the Chromium CPU. Hmm... I remember doing this somewhere...
 chromium = {memory = {0, 0, 0}, memory_index = 1}
 function file_exists(file)
     local f = io.open(file, "rb")
@@ -31,6 +30,7 @@ function parse(code)
     for s, r in pairs(code) do
         a = 1
         repeat
+            print("`"..r:sub(a, a).."`")
             out[a] = r:sub(a, a)
             a = a + 1
         until a > r:len(r)
@@ -52,7 +52,7 @@ function exec(parsed)
         elseif e == "?" then
             chromium.memory[chromium.memory_index] = math.random(0, 9)
         elseif e == "#" then
-            chromium.memory[chromium.memory_index] = tonumber(io.read(1))
+            chromium.memory[chromium.memory_index] = tonumber(io.read("*n"))
         elseif e == "$" then
             chromium.memory[chromium.memory_index] = chromium.memory[chromium.memory_index] + 10
         elseif e == "`" then
@@ -61,6 +61,22 @@ function exec(parsed)
             chromium.memory[chromium.memory_index] = chromium.memory[chromium.memory_index] - 1
         elseif e == "|" then
             chromium.memory[chromium.memory_index] = chromium.memory[chromium.memory_index] - 10
+        elseif e == ">" then
+            chromium.memory_index = chromium.memory_index + 1
+        elseif e == "<" then
+            chromium.memory_index = chromium.memory_index - 1
+        elseif e == "%" then
+            chromium.memory[3] = chromium.memory[1] % chromium.memory[2]
+        elseif e == "+" then
+            chromium.memory[3] = chromium.memory[1] + chromium.memory[2]
+        elseif e == "-" then
+            chromium.memory[3] = chromium.memory[1] - chromium.memory[2]
+        elseif e == "*" then
+            chromium.memory[3] = chromium.memory[1] * chromium.memory[2]
+        elseif e == "/" then
+            chromium.memory[3] = chromium.memory[1] / chromium.memory[2]
+        elseif e == "^" then
+            chromium.memory[3] = math.pow(chromium.memory[1], chromium.memory[2])
         end
     end
 end

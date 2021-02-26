@@ -17,7 +17,7 @@
   @      | ends a program
   [0-9]  | puts a digit in the current memory
   ?      | puts a random digit in current memory
-  \#     | accepts one digit of input and puts that in memory
+  \#     | accepts numeric input and puts that in memory
   $      | add 10 to the current memory
   `      | add 1 to current memory
   \      | subtract 1 from the current memory
@@ -29,3 +29,4 @@
   \-     | ```c = a - b```
   /      | ```c = a / b```
   \*     | ```c = a * b```
+  ^      | ```c = a ^ b```
