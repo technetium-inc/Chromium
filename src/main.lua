@@ -30,7 +30,6 @@ function parse(code)
     for s, r in pairs(code) do
         a = 1
         repeat
-            print("`"..r:sub(a, a).."`")
             out[a] = r:sub(a, a)
             a = a + 1
         until a > r:len(r)

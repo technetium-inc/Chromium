@@ -30,3 +30,10 @@
   /      | ```c = a / b```
   \*     | ```c = a * b```
   ^      | ```c = a ^ b```
+
+## Downloads
+### [1.0.0](https://github.com/Technetium-Inc/Chromium/tree/v1.0.0)
+
+ [Windows](https://github.com/Technetium-Inc/Chromium/releases/download/v1.0.0/chromium.zip)
+
+ [Linux](https://github.com/Technetium-Inc/Chromium/releases/download/v1.0.0/chromium.out)
