@@ -1,10 +1,10 @@
-# Chromium
+# Chromium (GibberScript)
  Yet another esoteric programming language. This one is made in Lua and has two purposes:
   1. Make a language with a cool name.
   2. Emphasize/showcase the power of pure, painful, arduously composed nonsense.
 
 ## Syntax
- Chromium is a mixture of Befunge and [Thulium](https://github.com/JavaCode7/Thulium) but without the Bf part of things (very little memory space as opposed to the aforementioned).
+ Chromium (or if you like, GibberScript) is a mixture of Befunge and [Thulium](https://github.com/JavaCode7/Thulium) but without the Bf part of things (very little memory space as opposed to the aforementioned).
 
  Chromium functions using only 3 memory cells that can be accessed. In the docs these are referred to as a, b, and c respectively.
 
@@ -37,3 +37,8 @@
  [Windows](https://github.com/Technetium-Inc/Chromium/releases/download/v1.0.0/chromium.zip)
 
  [Linux](https://github.com/Technetium-Inc/Chromium/releases/download/v1.0.0/chromium.out)
+## Examples
+ Hello World:
+ ```
+ $$$$$$$``,$$$\,```````,,```,`||||||||,`````$$$$$,````$$,```,\\\\\\,\\\\\\\\,@
+ ```
