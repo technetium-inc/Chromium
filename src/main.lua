@@ -1,17 +1,21 @@
 chromium = {memory = {0, 0, 0}, memory_index = 1}
 function file_exists(file)
     local f = io.open(file, "rb")
-    if f then f:close() end
+    if f then
+        f:close()
+    end
     return f ~= nil
-  end
+end
 
 function lines_from(file)
-  if not file_exists(file) then return {} end
-  lines = {}
-  for line in io.lines(file) do
-      lines[#lines + 1] = line
-  end
-  return lines
+    if not file_exists(file) then
+        return {}
+    end
+    lines = {}
+    for line in io.lines(file) do
+        lines[#lines + 1] = line
+    end
+    return lines
 end
 
 function read()
@@ -19,7 +23,7 @@ function read()
     local lines = lines_from(file)
     local res = {}
 
-    for k,v in pairs(lines) do
+    for k, v in pairs(lines) do
         k = nil
         res[#res + 1] = v
     end
@@ -46,7 +50,10 @@ function exec(parsed)
             io.write("\027[93m" .. string.char(chromium.memory[chromium.memory_index]) .. "\027[0m")
         elseif e == "@" then
             os.exit()
-        elseif e == "0" or e == "1" or e == "2" or e == "3" or e == "4" or e == "5" or e == "6" or e == "7" or e == "8" or e == "9" then
+        elseif
+            e == "0" or e == "1" or e == "2" or e == "3" or e == "4" or e == "5" or e == "6" or e == "7" or e == "8" or
+                e == "9"
+         then
             chromium.memory[chromium.memory_index] = tonumber(e)
         elseif e == "?" then
             chromium.memory[chromium.memory_index] = math.random(0, 9)
